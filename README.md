@@ -1,0 +1,1 @@
+# php-mysql-project-skeleton
