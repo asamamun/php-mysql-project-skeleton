@@ -16,3 +16,5 @@ $data = [
 ];
 $id = $db->insert ('products', $data);
 echo "record added. ID: " . $id;
+echo "<hr>";
+echo $db->getLastQuery();
