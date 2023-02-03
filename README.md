@@ -1,6 +1,6 @@
 # php-mysql-project-skeleton
 # pds/skeleton
-
+# PHP-MySQLi-Database-Class MysqlDb
 This publication describes a standard filesystem skeleton suitable for all PHP
 packages.
 
@@ -163,3 +163,5 @@ this publication.
 
 This publication does not define the structure and contents of the other
 root-level files.
+
+## Mysqil DB class from this source https://github.com/ThingEngineer/PHP-MySQLi-Database-Class
