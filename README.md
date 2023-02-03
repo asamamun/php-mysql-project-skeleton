@@ -164,4 +164,5 @@ this publication.
 This publication does not define the structure and contents of the other
 root-level files.
 
-## Mysqil DB class from this source https://github.com/ThingEngineer/PHP-MySQLi-Database-Class
+## Mysqil DB class from this source 
+<a href="https://github.com/ThingEngineer/PHP-MySQLi-Database-Class">Source</a>
