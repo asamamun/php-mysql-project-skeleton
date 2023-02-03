@@ -8,7 +8,7 @@
             "App\\": "src/",
             "Admin\\": "admin/"
         },
-        "files": ["src/settings.php"]
+        "files": ["src/settings.php","src/db/MysqliDb.php"]
     },
     "authors": [
         {

@@ -4,6 +4,7 @@ if (!function_exists('settings')) {
     {
         return [
             'companyname'=> 'Gold Digger Enterprise',
+            'logo'=>"null",
             'homepage'=> 'http://localhost/Round53/php/r53php/class29-projectSetup/LionsCommerce/',
             'hostname'=> 'localhost',
             'user'=> 'root',
