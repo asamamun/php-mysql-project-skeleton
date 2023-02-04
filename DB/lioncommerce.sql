@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 02, 2023 at 05:49 PM
+-- Generation Time: Feb 04, 2023 at 07:04 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -37,6 +37,14 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `email`, `password`, `role`, `created_at`) VALUES
+(2, 'abu mamun', 'mamun@gmail.com', '$2y$10$e7CRGgf5wt5H2tIvY6I2UO5aNJiqOnKMKqx7715gokUY8ftqBVr/y', '1', '2023-02-04 10:14:44'),
+(3, 'test user', 'test1@gmail.com', '$2y$10$QBWU4qDVwMPliKlX7BZjUe/bhu4ZzEZPtGN.WnmdIVrFxwvhAb0ZG', '2', '2023-02-04 10:38:18');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -44,7 +52,8 @@ CREATE TABLE `users` (
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `email` (`email`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -54,7 +63,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

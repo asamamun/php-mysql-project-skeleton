@@ -2,10 +2,12 @@
 if (!function_exists('settings')) {
     function settings()
     {
+       $root = "http://localhost/Round53/php/LionsCommerce/"; 
         return [
             'companyname'=> 'Gold Digger Enterprise',
-            'logo'=>"null",
-            'homepage'=> 'http://localhost/Round53/php/LionsCommerce/',
+            'logo'=>$root."admin/assets/img/logo.svg",
+            'homepage'=> $root,
+            'adminpage'=>$root.'admin/',
             'hostname'=> 'localhost',
             'user'=> 'root',
             'password'=> '',
