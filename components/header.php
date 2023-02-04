@@ -6,3 +6,4 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= settings()['companyname'] ?> - <?= $page ?></title>
     <link rel="stylesheet" href="<?= settings()['homepage'] ?>assets/css/bootstrap.min.css">
+    <script src="<?= settings()['homepage'] ?>assets/js/bootstrap.bundle.min.js"></script>

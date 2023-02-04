@@ -1,4 +1,7 @@
 <?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 require __DIR__ . '/vendor/autoload.php';
 use App\User;
 use App\model\Category;
@@ -24,7 +27,7 @@ echo $u->testme();
 $users = $db->get('users');
 // var_dump($users);
 foreach($users as $user){
-    echo $user['username']."(".$user['email'].")<br>";
+    echo $user['name']."(".$user['email'].")<br>";
 }
 echo "<h1>Total Users: ".count($users)."</h1>";
 ?>
