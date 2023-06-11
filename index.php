@@ -35,6 +35,10 @@ echo "<h1>Total Users: ".count($users)."</h1>";
 <?php
 echo Category::testing();
 ?>
+<hr>
+<?php
+echo config('round55.b');
+?>
 </div>
 <script>
     
