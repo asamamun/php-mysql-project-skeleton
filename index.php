@@ -5,7 +5,7 @@ if (session_status() === PHP_SESSION_NONE) {
 require __DIR__ . '/vendor/autoload.php';
 use App\User;
 use App\model\Category;
-use App\db;
+// use App\db;
 // $conn = db::connect();
 $db = new MysqliDb ();
 $page = "Home";
@@ -15,6 +15,7 @@ $page = "Home";
 </head>
 <body>
     <div class="container">
+<img src="<?= settings()['logo'] ?>" alt="">
 <?php require __DIR__ . '/components/menubar.php';?>
 <?php
 echo testfunc();
@@ -37,8 +38,16 @@ echo Category::testing();
 ?>
 <hr>
 <?php
-echo config('round55.b');
+echo config('idb.name');
 ?>
+<hr>
+<h3>Autoloading Settings() function in src/settings.php file in composer.json :</h3>
+<pre>
+<?php
+var_dump(settings());
+?>
+</pre>
+
 </div>
 <script>
     

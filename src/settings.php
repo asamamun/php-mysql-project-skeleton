@@ -2,7 +2,7 @@
 if (!function_exists('settings')) {
     function settings()
     {
-       $root = "http://localhost/R55/PWAD-PHP-R55/class35/php-mysql-project-skeleton/"; 
+       $root = "http://localhost/ROUND57/PHP/php-mysql-project-skeleton/"; 
         return [
             'root'  => $root,
             'companyname'=> 'Gold Digger Enterprise',

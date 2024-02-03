@@ -10,7 +10,6 @@ if(!Admin::Check()){
 }
 ?>
 <?php require __DIR__.'/components/header.php'; ?>
-
     </head>
     <body class="sb-nav-fixed">
     <?php require __DIR__.'/components/navbar.php'; ?>
