@@ -40,6 +40,7 @@ if(isset($_POST['login'])){
 
 </head>
 <body>
+  <h1><?= config('test.course') ?></h1>
 <div class="container">
 <?php require __DIR__ . '/components/menubar.php';?>
 <h1>Login page</h1>

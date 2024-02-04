@@ -41,6 +41,10 @@ echo Category::testing();
 echo config('idb.name');
 ?>
 <hr>
+<?php
+echo config('test.round');
+?>
+<hr>
 <h3>Autoloading Settings() function in src/settings.php file in composer.json :</h3>
 <pre>
 <?php

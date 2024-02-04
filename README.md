@@ -166,3 +166,5 @@ root-level files.
 
 ## Mysqil DB class from this source 
 <a href="https://github.com/ThingEngineer/PHP-MySQLi-Database-Class">Source</a>
+## Settings File in sec/settings for 
+ <strong>The setting file contains two important functions: settings() and config('filename.keyname'). The config file must be in config directory.</strong>
