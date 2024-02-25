@@ -168,7 +168,7 @@ root-level files.
 # Specifications
 ![image01](https://github.com/asamamun/php-mysql-project-skeleton/blob/main/assets/readme/specifications.png)
 # Examples
-![image02](https://github.com/asamamun/php-mysql-project-skeleton/blob/main/assets/readme/examples.png)
+![image02](https://github.com/asamamun/php-mysql-project-skeleton/blob/main/assets/readme/examples.PNG)
 ## Mysqil DB class from this source 
 <a href="https://github.com/ThingEngineer/PHP-MySQLi-Database-Class">Source</a>
 
