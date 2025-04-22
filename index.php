@@ -1,63 +1,33 @@
 <?php
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
+require_once __DIR__ . '/vendor/autoload.php';
+
+// For debugging
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
+$basePath = '/ROUND64/PHP/php-mysql-project-skeleton/';
+// Capture request URI
+$requestUri = $_SERVER['REQUEST_URI'];
+echo "Request URI: " . $requestUri . "<br>";
+// Remove base path from request URI
+if (!empty($basePath) && strpos($requestUri, $basePath) === 0) {
+    $requestUri = substr($requestUri, strlen($basePath));
 }
-require __DIR__ . '/vendor/autoload.php';
-use App\User;
-use App\model\Category;
-// use App\db;
-// $conn = db::connect();
-$db = new MysqliDb ();
-$page = "Home";
-?>
-<?php require __DIR__ . '/components/header.php';?>
 
-</head>
-<body>
-    <div class="container">
-<img src="<?= settings()['logo'] ?>" alt="">
-<?php require __DIR__ . '/components/menubar.php';?>
-<?php
-echo testfunc();
-// var_dump(settings());
-$u = new User();
-echo $u->testme();
-?>
-<?php
-// $r = $conn->query("select * from users");
-$users = $db->get('users');
-// var_dump($users);
-foreach($users as $user){
-    echo $user['name']."(".$user['email'].")<br>";
-}
-echo "<h1>Total Users: ".count($users)."</h1>";
-?>
-<hr>
-<?php
-echo Category::testing();
-?>
-<hr>
-<?php
-echo config('idb.name');
-?>
-<hr>
-<?php
-echo config('test.round');
-?>
-<hr>
-<h3>Autoloading Settings() function in src/settings.php file in composer.json :</h3>
-<pre>
-<?php
-var_dump(settings());
-?>
-</pre>
+// Normalize the path
+$requestUri = '/' . trim($requestUri, '/');
 
-</div>
-<script>
-    
-</script>
+// Your router code here...
+$router = App\Classes\Router::getInstance();
 
-<?php 
-require __DIR__ . '/components/footer.php'; 
-$db->disconnect();
-?>
+// Define routes - ensure you have a route for the home page
+$router->addRoute('GET', '/', 'HomeController@index');
+$router->addRoute('GET', '/hi', 'HomeController@hi');
+
+// Add more routes...
+
+// For debugging, show registered routes
+var_dump($router->getRoutes());
+
+// Dispatch
+$router->dispatch($requestUri, $_SERVER['REQUEST_METHOD']);

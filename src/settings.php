@@ -1,32 +1,16 @@
 <?php
-if (!function_exists('settings')) {
-    function settings()
-    {
-       $root = "http://localhost/ROUND57/PHP/php-mysql-project-skeleton/"; 
-        return [
-            'root'  => $root,
-            'companyname'=> 'Gold Digger Enterprise',
-            'logo'=>$root."admin/assets/img/logo.svg",
-            'homepage'=> $root,
-            'adminpage'=>$root.'admin/',
-            'hostname'=> 'localhost',
-            'user'=> 'root',
-            'password'=> '',
-            'database'=> 'lioncommerce'
-        ];
-    }
-}
-if (!function_exists('testfunc')) {
-    function testfunc()
-    {
-        return "<h3>testing common functions</h3>";
-    }
-}
-if (!function_exists('config')) {
-    function config($param)
-    {        
-      $parts = explode(".",$param);
-      $inc = include(__DIR__."/../config/".$parts[0].".php");
-      return $inc[$parts[1]];
-    }
-}
+// Base settings that apply to the entire application
+return [
+    'APP_NAME' => 'PHP MySQL Project',
+    'APP_ENV' => 'development',
+    'APP_DEBUG' => true,
+    'APP_URL' => 'http://localhost/ROUND64/PHP/php-mysql-project-skeleton/',
+    'DEFAULT_DB_CONFIG' => 'idb',
+    'BASE_URL' => 'http://localhost/ROUND64/PHP/php-mysql-project-skeleton/',
+    'DB_HOST'=>'localhost',
+    'DB_USER'=>'root',
+    'DB_PASS'=>'',
+    'DB_NAME'=>'lioncommerce'
+
+    // Add any other global settings here
+];
