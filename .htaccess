@@ -1,8 +1,8 @@
 RewriteEngine On
-RewriteBase /
 
-# If the requested resource doesn't exist as a file or directory
+# If the requested resource exists as a file or directory, skip the rewrite
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-# Rewrite all requests to index.php
+
+# Rewrite all other requests to index.php
 RewriteRule ^(.*)$ index.php [QSA,L]

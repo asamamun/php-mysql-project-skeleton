@@ -39,7 +39,7 @@ class Router {
         return $this->routes;
     }
     
-    public function dispatch($uri, $method) {
+/*     public function dispatch($uri, $method) {
         // Check for direct match
         if (isset($this->routes[$method][$uri])) {
             return $this->executeHandler($this->routes[$method][$uri]);
@@ -62,6 +62,40 @@ class Router {
         }
         
         // No route found
+        header("HTTP/1.0 404 Not Found");
+        echo '404 Not Found';
+        exit;
+    } */
+    public function dispatch($uri, $method) {
+        echo "Dispatching URI: {$uri} with method: {$method}<br>";
+        
+        // Check for direct match
+        if (isset($this->routes[$method][$uri])) {
+            echo "Found exact route match!<br>";
+            return $this->executeHandler($this->routes[$method][$uri]);
+        }
+        
+        // Check for pattern matches with parameters
+        foreach ($this->routes[$method] as $pattern => $handler) {
+            // Convert route patterns to regex for parameter extraction
+            $regexPattern = preg_replace('/\/{([^\/]+)}/', '/(?P<$1>[^/]+)', $pattern);
+            $regexPattern = "#^{$regexPattern}$#";
+            
+            echo "Checking pattern {$pattern} with regex {$regexPattern}<br>";
+            
+            if (preg_match($regexPattern, $uri, $matches)) {
+                echo "Found pattern match!<br>";
+                // Filter out numeric keys
+                $params = array_filter($matches, function($key) {
+                    return !is_numeric($key);
+                }, ARRAY_FILTER_USE_KEY);
+                
+                return $this->executeHandler($handler, $params);
+            }
+        }
+        
+        // No route found
+        echo "No route match found for {$uri}<br>";
         header("HTTP/1.0 404 Not Found");
         echo '404 Not Found';
         exit;
@@ -93,4 +127,5 @@ class Router {
         
         throw new \Exception("Invalid route handler");
     }
+
 }

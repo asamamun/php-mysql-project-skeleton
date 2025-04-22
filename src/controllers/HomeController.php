@@ -13,7 +13,7 @@ class HomeController extends BaseController {
             'users' => $users
         ]);
     }
-    public function hi() {
+/*     public function hi() {
         // $db = DB::getInstance();
         // $users = $db->select("SELECT * FROM users LIMIT 10");
         
@@ -21,5 +21,10 @@ class HomeController extends BaseController {
             'title' => 'hi from genuity',
             // 'users' => $users
         ]);
+    } */
+    public function hi() {
+        // echo "Hi there!";
+        // Or if you're using your render method:
+        $this->render('home/hi', ['title' => 'IDB: Hi Page']);
     }
 }
